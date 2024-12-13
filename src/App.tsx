@@ -5,6 +5,8 @@ import PersonList from './components/PersonList';
 import Status from './components/Status';
 import Heading from './components/Heading';
 import Oscar from './components/Oscar';
+import Button from './components/Button';
+import Input from './components/Input';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -26,9 +28,12 @@ function App() {
       last:"Diana"
     }
   ]
+  const handleClick = (event) =>{
+    console.log("click event!",event)
+  }
   return (
     <div>
-      <Heading>This is Heading</Heading>
+      {/* <Heading>This is Heading</Heading>
       <Greet name="One" count={9} isLoggin={true}/>
       <Greet name="No Messages" isLoggin={true}/>
       <Person name={personName} />
@@ -36,7 +41,9 @@ function App() {
       <Status status='error'/>
       <Oscar>
         <Heading>This is Oscar Heading</Heading>
-      </Oscar>
+      </Oscar> */}
+      <Button handleClick={handleClick}/>
+      <Input inputType='text' value='test' handleChange={e=>console.log(e.target.value)}/>
       
     </div>
   )
